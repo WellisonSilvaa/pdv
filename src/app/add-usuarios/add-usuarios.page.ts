@@ -1,3 +1,4 @@
+import { Api } from './../../services/api';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -15,7 +16,9 @@ export class AddUsuariosPage implements OnInit {
   nivel: string = "";
   id: string = "";
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private provider: Api) { }
 
   ngOnInit() {
   }
