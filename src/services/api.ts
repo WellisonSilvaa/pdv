@@ -18,6 +18,6 @@ export class Api{
                 }
 
             let url = this.server + api;
-            return this.http.post(url, JSON.stringify(dados), httpOptions).map(res => res);
+            return this.http.post(url, JSON.stringify(dados), httpOptions);
         }
 }
