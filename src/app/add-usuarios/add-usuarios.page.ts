@@ -31,20 +31,11 @@ export class AddUsuariosPage implements OnInit {
     })
   }
 
-  async mensagemSucesso(mensagem: any){
+  async mensagem(mensagem: any, cor: any){
     const toast = await this.toastController.create({
       message: mensagem,
       duration: 1500,
-      color: "success"
-    })
-    await toast.present();
-  }
-
-  async mensagemErro(){
-    const toast = await this.toastController.create({
-      message: 'Erro',
-      duration: 1500,
-      color: "danger"
+      color: cor
     })
     await toast.present();
   }
@@ -63,13 +54,14 @@ export class AddUsuariosPage implements OnInit {
         nivel: this.nivel
       }
       this.provider.dadosApi(dados, 'usuarios/inserir.php').subscribe(
-        data=>{
+        (data: any)=>{
 
-          this.mensagemSucesso(data)
-          console.log(data)
-          this.router.navigate(['usuarios'])
-
-          // this.mensagemSucesso();
+          if(data['ok'] == true){
+            this.router.navigate(['usuarios']);
+            this.mensagem(data['mensagem'], 'success');
+          }else{
+            this.mensagem(data['mensagem'], 'danger');
+          }
 
         }
       )
