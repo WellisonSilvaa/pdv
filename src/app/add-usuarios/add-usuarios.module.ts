@@ -1,3 +1,4 @@
+import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +14,8 @@ import { AddUsuariosPage } from './add-usuarios.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    AddUsuariosPageRoutingModule
+    AddUsuariosPageRoutingModule,
+    IonicInputMaskModule
   ],
   declarations: [AddUsuariosPage]
 })

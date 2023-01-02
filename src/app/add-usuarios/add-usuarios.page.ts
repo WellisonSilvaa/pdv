@@ -34,7 +34,7 @@ export class AddUsuariosPage implements OnInit {
   async mensagem(mensagem: any, cor: any){
     const toast = await this.toastController.create({
       message: mensagem,
-      duration: 1500,
+      duration: 2000,
       color: cor
     })
     await toast.present();

@@ -23,7 +23,7 @@
     <ion-label position="floating">
       Cpf
     </ion-label>
-    <ion-input [(ngModel)]="cpf">
+    <ion-input [(ngModel)]="cpf" mask="***.***.***-**" maxlength="14" type="ewfds">
 
     </ion-input>
   </ion-item>
@@ -56,7 +56,7 @@
     </ion-select>
   </ion-item>
 
-  <ion-button *ngIf="!id" color="success" expand="block" (click)="cadastrar()">
+  <ion-button *ngIf="!id" color="dark" expand="block" (click)="cadastrar()">
     Salvar
   </ion-button>
 
