@@ -30,6 +30,7 @@ export class UsuariosPage implements OnInit {
   ionViewWillEnter(){
     this.itens = [];
     this.start = 0;
+    this.limit = 10;
     this.carregar();
   }
 
@@ -77,20 +78,21 @@ export class UsuariosPage implements OnInit {
 //barra de rolagem
 loadData(event: any) {
 
-  this.start += this.limit;
+  // this.start += this.limit;
+  this.limit += 10;
 
   setTimeout(() => {
     this.carregar().then(()=>{
       event.target.complete();
      });
 
-  }, 500);
+  }, 1000);
 
 
 }
 
 
-  }
+}
 
 
 

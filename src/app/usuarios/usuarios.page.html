@@ -24,7 +24,7 @@
 
 </ion-row>
 
-<ion-content class="cinza-claro" class="ion-padding">
+<ion-content class="ion-padding">
   <ion-list>
     <ion-item-sliding *ngFor="let item of itens">
       <ion-item-options side="start">
@@ -52,17 +52,12 @@
 
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content
-      pullingIcon="arrow-dropdown"
-      refreshingSpinner="circles"
-      refreshingText="Carregando...">
+    <ion-refresher-content>
     </ion-refresher-content>
   </ion-refresher>
 
 <ion-infinite-scroll  (ionInfinite)="loadData($event)">
-  <ion-infinite-scroll-content
-    loadingSpinner="bubbles"
-    loadingText="Carregando mais dados">
+  <ion-infinite-scroll-content>
   </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
